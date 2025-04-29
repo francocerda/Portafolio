@@ -7,16 +7,28 @@
 
 html {
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
+    font-family: var(--font-primary);
+    line-height: var(--line-height-normal);
+    color: var(--text-color);
+    background: var(--bg-color);
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Estado sin scroll para menú móvil */
+body.no-scroll {
+    overflow: hidden;
+    padding-right: var(--scrollbar-width, 0px); /* Previene el salto cuando se oculta el scrollbar */
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 
 ul, ol {
@@ -27,4 +39,53 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+/* Botones */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Inputs y textareas */
+input,
+textarea {
+    font: inherit;
+    color: inherit;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: var(--line-height-tight);
+}
+
+/* Utilidades de accesibilidad */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Previene el flash de contenido no estilizado */
+.no-fouc {
+    visibility: hidden;
+}
+
+/* Calcula el ancho del scrollbar */
+:root {
+    --scrollbar-width: calc(100vw - 100%);
 } 

@@ -1,0 +1,191 @@
+/* Card Styles */
+.card {
+    background: var(--bg-color);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Project Cards */
+.project-card {
+    background: var(--bg-color);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    transition: all var(--transition-normal);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.project-img {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.project-card:hover .project-img img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: var(--spacing-lg);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info h3 {
+    font-size: var(--font-size-h4);
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-color);
+    line-height: var(--line-height-tight);
+}
+
+.project-info p {
+    color: var(--text-color-light);
+    margin-bottom: var(--spacing-md);
+    line-height: var(--line-height-normal);
+    flex-grow: 1;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+}
+
+.project-tags span {
+    background: var(--bg-alt-color);
+    color: var(--text-color);
+    padding: calc(var(--spacing-xs) / 2) var(--spacing-sm);
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-tight);
+    transition: all var(--transition-normal);
+}
+
+.project-card:hover .project-tags span {
+    background: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.project-links {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: auto;
+}
+
+.project-links a {
+    color: var(--primary-color);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-weight: 500;
+    transition: all var(--transition-normal);
+    text-decoration: none;
+}
+
+.project-links a:hover {
+    color: var(--secondary-color);
+    transform: translateX(3px);
+}
+
+.project-links a i {
+    font-size: calc(var(--font-size-base) * 1.1);
+    transition: transform var(--transition-normal);
+}
+
+.project-links a:hover i {
+    transform: translateX(3px);
+}
+
+/* Skill Cards */
+.skill-card {
+    background: var(--bg-color);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.skill-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+    transition: transform var(--transition-normal);
+}
+
+.skill-card:hover .skill-icon {
+    transform: scale(1.1);
+}
+
+.skill-card h3 {
+    font-size: var(--font-size-h4);
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.skill-card p {
+    color: var(--text-color-light);
+    line-height: var(--line-height-normal);
+}
+
+/* Timeline Cards */
+.timeline-card {
+    background: var(--bg-color);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-lg);
+    border-left: 4px solid var(--primary-color);
+    transition: all var(--transition-normal);
+}
+
+.timeline-card:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .project-info {
+        padding: var(--spacing-md);
+    }
+    
+    .skill-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .timeline-card {
+        padding: var(--spacing-md);
+    }
+} 

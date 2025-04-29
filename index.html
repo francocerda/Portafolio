@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="src/css/components/buttons.css">
     <link rel="stylesheet" href="src/css/components/cards.css">
     <link rel="stylesheet" href="src/css/components/navbar.css">
+    <link rel="stylesheet" href="src/css/components/forms.css">
+    <link rel="stylesheet" href="src/css/components/animations.css">
     
     <!-- CSS Layouts -->
     <link rel="stylesheet" href="src/css/layouts/main.css">
@@ -24,7 +26,7 @@
     <!-- Fuentes de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -32,38 +34,57 @@
 <body>
     <!-- Header con navegación -->
     <header>
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <a href="#inicio">Franco Cerda</a>
-                </div>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#inicio" class="logo">
+                    <img src="assets/icons/logo.svg" alt="Logo Franco Cerda">
+                    Franco Cerda
+                </a>
                 <ul class="nav-menu">
-                    <li class="nav-item"><a href="#inicio" class="nav-link">Inicio</a></li>
-                    <li class="nav-item"><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
-                    <li class="nav-item"><a href="#habilidades" class="nav-link">Habilidades</a></li>
-                    <li class="nav-item"><a href="#proyectos" class="nav-link">Proyectos</a></li>
-                    <li class="nav-item"><a href="#experiencia" class="nav-link">Experiencia</a></li>
-                    <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
+                    <li class="nav-item">
+                        <a href="#inicio" class="nav-link active">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#habilidades" class="nav-link">Habilidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#proyectos" class="nav-link">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#experiencia" class="nav-link">Experiencia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contacto" class="nav-link">Contacto</a>
+                    </li>
                 </ul>
-                <div class="hamburger">
+                <button class="hamburger" aria-label="Menú">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
-                </div>
-            </nav>
-        </div>
+                </button>
+            </div>
+        </nav>
     </header>
 
     <!-- Sección Hero / Inicio -->
     <section id="inicio" class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Hola, soy <span class="highlight">Franco Cerda</span></h1>
-                <h2>Ingeniero Civil Informático</h2>
-                <p>Desarrollando soluciones tecnológicas e innovadoras</p>
-                <div class="hero-buttons">
-                    <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
-                    <a href="#contacto" class="btn btn-secondary">Contacto</a>
+            <div class="hero-content slide-up">
+                <h1>Hola, soy <span class="highlight hover-scale">Franco Cerda</span></h1>
+                <h2 class="delay-1">Ingeniero Civil Informático</h2>
+                <p class="delay-2">Desarrollando soluciones tecnológicas e innovadoras</p>
+                <div class="hero-buttons delay-3">
+                    <a href="#proyectos" class="btn btn-primary hover-lift">
+                        <i class="fas fa-code"></i>
+                        Ver Proyectos
+                    </a>
+                    <a href="#contacto" class="btn btn-secondary hover-lift">
+                        <i class="fas fa-envelope"></i>
+                        Contacto
+                    </a>
                 </div>
             </div>
         </div>
@@ -72,30 +93,32 @@
     <!-- Sección Sobre Mí -->
     <section id="sobre-mi" class="about">
         <div class="container">
-            <h2 class="section-title">Sobre Mí</h2>
+            <h2 class="section-title slide-up">Sobre Mí</h2>
             <div class="about-content">
-                <div class="about-image">
-                    <!-- Aquí irá tu foto -->
-                    <img src="images/placeholder.jpg" alt="Franco Cerda">
+                <div class="about-image slide-in-left">
+                    <img src="assets/images/profile.jpg" alt="Franco Cerda" class="hover-scale">
                 </div>
-                <div class="about-text">
-                    <p>Soy estudiante de cuarto año de Ingeniería Civil Informática con pasión por [tus intereses]. Mi enfoque se centra en [tu especialidad o área de interés].</p>
-                    <p>Durante mi carrera universitaria, he desarrollado habilidades en [menciona algunas habilidades clave], y he trabajado en diversos proyectos que me han permitido aplicar mis conocimientos en situaciones reales.</p>
+                <div class="about-text slide-in-right">
+                    <p>Soy un apasionado Ingeniero Civil Informático con un fuerte interés en el desarrollo web y la innovación tecnológica. Mi enfoque se centra en crear soluciones elegantes y eficientes para problemas complejos.</p>
+                    <p>Durante mi carrera universitaria, he desarrollado habilidades en desarrollo full-stack, arquitectura de software y gestión de proyectos, trabajando en diversos proyectos que me han permitido aplicar mis conocimientos en situaciones reales.</p>
                     <div class="about-details">
-                        <div class="detail-item">
+                        <div class="detail-item hover-lift">
                             <i class="fas fa-graduation-cap"></i>
-                            <span>Educación: Ingeniería Civil Informática, [Tu Universidad]</span>
+                            <span>Ingeniería Civil Informática, Universidad Técnica Federico Santa María</span>
                         </div>
-                        <div class="detail-item">
+                        <div class="detail-item hover-lift">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Ubicación: [Tu Ciudad, País]</span>
+                            <span>Viña del Mar, Chile</span>
                         </div>
-                        <div class="detail-item">
+                        <div class="detail-item hover-lift">
                             <i class="fas fa-language"></i>
-                            <span>Idiomas: Español, [Otros idiomas]</span>
+                            <span>Español (Nativo), Inglés (Avanzado)</span>
                         </div>
                     </div>
-                    <a href="#" class="btn btn-primary">Descargar CV</a>
+                    <a href="assets/docs/CV-Franco-Cerda.pdf" class="btn btn-primary hover-lift" target="_blank">
+                        <i class="fas fa-download"></i>
+                        Descargar CV
+                    </a>
                 </div>
             </div>
         </div>
@@ -104,34 +127,10 @@
     <!-- Sección Habilidades -->
     <section id="habilidades" class="skills">
         <div class="container">
-            <h2 class="section-title">Mis Habilidades</h2>
+            <h2 class="section-title slide-up">Mis Habilidades</h2>
             <div class="skills-content">
-                <div class="skill-category">
-                    <h3>Lenguajes de Programación</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Python</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Java</span>
-                                <span>75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        <!-- Agrega más habilidades aquí -->
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Desarrollo Web</h3>
+                <div class="skill-category slide-in-left delay-1">
+                    <h3>Desarrollo Frontend</h3>
                     <div class="skill-items">
                         <div class="skill-item">
                             <div class="skill-info">
@@ -145,13 +144,85 @@
                         <div class="skill-item">
                             <div class="skill-info">
                                 <span>JavaScript</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>React</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category slide-in-right delay-2">
+                    <h3>Desarrollo Backend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Python</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Node.js</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>SQL</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category slide-up delay-3">
+                    <h3>Herramientas y Otros</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Git</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Docker</span>
                                 <span>70%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 70%"></div>
                             </div>
                         </div>
-                        <!-- Agrega más habilidades aquí -->
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>AWS</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -161,82 +232,95 @@
     <!-- Sección Proyectos -->
     <section id="proyectos" class="projects">
         <div class="container">
-            <h2 class="section-title">Mis Proyectos</h2>
-            <div class="projects-filter">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="web">Web</button>
-                <button class="filter-btn" data-filter="app">Aplicaciones</button>
-                <button class="filter-btn" data-filter="otros">Otros</button>
+            <h2 class="section-title slide-up">Mis Proyectos</h2>
+            <div class="projects-filter slide-up delay-1">
+                <button class="btn btn-outline active" data-filter="all">Todos</button>
+                <button class="btn btn-outline" data-filter="web">Web</button>
+                <button class="btn btn-outline" data-filter="app">Aplicaciones</button>
+                <button class="btn btn-outline" data-filter="otros">Otros</button>
             </div>
             <div class="projects-grid">
                 <!-- Proyecto 1 -->
-                <div class="project-card" data-category="web">
+                <div class="project-card hover-lift slide-up delay-2" data-category="web">
                     <div class="project-img">
-                        <img src="images/project1.jpg" alt="Proyecto 1">
+                        <img src="assets/images/projects/project1.jpg" alt="Proyecto 1">
                     </div>
                     <div class="project-info">
-                        <h3>Nombre del Proyecto 1</h3>
-                        <p>Descripción breve del proyecto. Explica en qué consiste y qué tecnologías utilizaste.</p>
+                        <h3>Sistema de Gestión Académica</h3>
+                        <p>Plataforma web para la gestión de cursos, estudiantes y calificaciones. Desarrollada con React y Node.js.</p>
                         <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
-                            <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" target="_blank" class="hover-scale">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                            <a href="#" target="_blank" class="hover-scale">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
                 <!-- Proyecto 2 -->
-                <div class="project-card" data-category="app">
+                <div class="project-card hover-lift slide-up delay-3" data-category="app">
                     <div class="project-img">
-                        <img src="images/project2.jpg" alt="Proyecto 2">
+                        <img src="assets/images/projects/project2.jpg" alt="Proyecto 2">
                     </div>
                     <div class="project-info">
-                        <h3>Nombre del Proyecto 2</h3>
-                        <p>Descripción breve del proyecto. Explica en qué consiste y qué tecnologías utilizaste.</p>
+                        <h3>App de Gestión de Tareas</h3>
+                        <p>Aplicación móvil para la gestión de tareas y proyectos personales. Desarrollada con React Native.</p>
                         <div class="project-tags">
-                            <span>Java</span>
-                            <span>MySQL</span>
+                            <span>React Native</span>
+                            <span>Firebase</span>
+                            <span>Redux</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
-                            <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" target="_blank" class="hover-scale">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                            <a href="#" target="_blank" class="hover-scale">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
-                <!-- Añade más proyectos según necesites -->
             </div>
         </div>
     </section>
 
-    <!-- Sección Experiencia / CV -->
+    <!-- Sección Experiencia -->
     <section id="experiencia" class="experience">
         <div class="container">
-            <h2 class="section-title">Experiencia y Formación</h2>
+            <h2 class="section-title slide-up">Experiencia y Formación</h2>
             <div class="timeline">
-                <!-- Elemento de experiencia -->
-                <div class="timeline-item">
+                <!-- Experiencia 1 -->
+                <div class="timeline-item slide-in-right">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content">
+                    <div class="timeline-content hover-lift">
+                        <h3>Desarrollador Full Stack</h3>
+                        <h4>Empresa Tecnológica</h4>
+                        <p class="timeline-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            Ene 2024 - Presente
+                        </p>
+                        <p>Desarrollo de aplicaciones web utilizando React y Node.js. Implementación de arquitecturas escalables y mantenimiento de bases de datos.</p>
+                    </div>
+                </div>
+                <!-- Experiencia 2 -->
+                <div class="timeline-item slide-in-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content hover-lift">
                         <h3>Práctica Profesional</h3>
-                        <h4>Nombre de la Empresa</h4>
-                        <p class="timeline-date"><i class="fas fa-calendar-alt"></i> Ene 2024 - Mar 2024</p>
-                        <p>Descripción de las responsabilidades y logros durante tu práctica profesional. Menciona las tecnologías que utilizaste y las habilidades que desarrollaste.</p>
+                        <h4>Startup Innovadora</h4>
+                        <p class="timeline-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            Jun 2023 - Dic 2023
+                        </p>
+                        <p>Desarrollo de funcionalidades frontend y backend para una plataforma de e-commerce. Trabajo con metodologías ágiles y control de versiones.</p>
                     </div>
                 </div>
-                <!-- Elemento de educación -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Ingeniería Civil Informática</h3>
-                        <h4>Nombre de tu Universidad</h4>
-                        <p class="timeline-date"><i class="fas fa-calendar-alt"></i> 2020 - Presente</p>
-                        <p>Información sobre tu carrera universitaria. Puedes mencionar cursos relevantes, proyectos académicos destacados o reconocimientos.</p>
-                    </div>
-                </div>
-                <!-- Añade más elementos según necesites -->
             </div>
         </div>
     </section>
@@ -244,51 +328,62 @@
     <!-- Sección Contacto -->
     <section id="contacto" class="contact">
         <div class="container">
-            <h2 class="section-title">Contacto</h2>
+            <h2 class="section-title slide-up">Contacto</h2>
             <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
+                <div class="contact-info slide-in-left">
+                    <div class="contact-item hover-lift">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>Email</h3>
-                            <p>tu.email@ejemplo.com</p>
+                            <p>franco.cerda@example.com</p>
                         </div>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-item hover-lift">
                         <i class="fas fa-phone"></i>
                         <div>
                             <h3>Teléfono</h3>
-                            <p>+123 456 7890</p>
+                            <p>+56 9 1234 5678</p>
                         </div>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-item hover-lift">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h3>Ubicación</h3>
-                            <p>Ciudad, País</p>
+                            <p>Viña del Mar, Chile</p>
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank" class="hover-rotate">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" target="_blank" class="hover-rotate">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" target="_blank" class="hover-rotate">
+                            <i class="fab fa-twitter"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Tu Nombre" required>
+                <div class="contact-form slide-in-right">
+                    <form id="contactForm" class="form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Tu Nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Tu Email" required>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Tu Email" required>
+                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Asunto" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Asunto" required>
+                            <textarea class="form-control" id="message" name="message" placeholder="Tu Mensaje" required></textarea>
                         </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Tu Mensaje" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                        <button type="submit" class="btn btn-primary hover-lift">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensaje
+                        </button>
                     </form>
                 </div>
             </div>
@@ -296,22 +391,22 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="fade-in">
         <div class="container">
-            <p>&copy; 2025 Franco Cerda. Todos los derechos reservados.</p>
+            <p>&copy; 2024 Franco Cerda. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <!-- JavaScript Utils -->
-    <script src="src/js/utils/animations.js"></script>
-    <script src="src/js/utils/helpers.js"></script>
+    <script type="module" src="src/js/utils/animations.js"></script>
+    <script type="module" src="src/js/utils/helpers.js"></script>
 
     <!-- JavaScript Components -->
-    <script src="src/js/components/navbar.js"></script>
-    <script src="src/js/components/projects.js"></script>
-    <script src="src/js/components/skills.js"></script>
+    <script type="module" src="src/js/components/navbar.js"></script>
+    <script type="module" src="src/js/components/projects.js"></script>
+    <script type="module" src="src/js/components/skills.js"></script>
 
     <!-- Main JavaScript -->
-    <script src="src/js/main.js"></script>
+    <script type="module" src="src/js/main.js"></script>
 </body>
 </html>

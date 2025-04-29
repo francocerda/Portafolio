@@ -91,4 +91,57 @@ const animations = {
 };
 
 // Export animations
-window.animations = animations; 
+window.animations = animations;
+
+// Intersection Observer for reveal animations
+const initRevealAnimations = () => {
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // Optional: Unobserve after reveal if you don't want to animate again
+                // revealObserver.unobserve(entry.target);
+            } else {
+                // Optional: Remove active class when element is out of view
+                // entry.target.classList.remove('active');
+            }
+        });
+    }, {
+        threshold: 0.15, // Trigger when 15% of the element is visible
+        rootMargin: '0px' // No margin
+    });
+
+    revealElements.forEach(element => {
+        revealObserver.observe(element);
+    });
+};
+
+// Initialize staggered animations for groups of elements
+const initStaggeredAnimations = () => {
+    const staggerGroups = document.querySelectorAll('[data-stagger-group]');
+    
+    staggerGroups.forEach(group => {
+        const children = group.children;
+        [...children].forEach((child, index) => {
+            child.classList.add(`delay-${index + 1}`);
+            child.classList.add('reveal');
+        });
+    });
+};
+
+// Initialize all animations
+const initAnimations = () => {
+    initRevealAnimations();
+    initStaggeredAnimations();
+    
+    // Re-run initialization when new content is dynamically added
+    // You can call initAnimations() after adding new content
+};
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', initAnimations);
+
+// Export functions for use in other files
+export { initAnimations, initRevealAnimations, initStaggeredAnimations }; 
